@@ -11,3 +11,7 @@ Foo(ref y); // Error: y should be initialized before calling the method
 
 <i><b>Ref</b></i>
  <i><b>Out</b></i> 
+ 
+ 
+ ![ref_vs_out](https://cloud.githubusercontent.com/assets/20840005/23070031/26611812-f543-11e6-97f3-84e5466032a0.png)
+
