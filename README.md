@@ -8,6 +8,25 @@ Foo(out x); // OK
 int y;
 Foo(ref y); // Error: y should be initialized before calling the method
 ```
+```C#
+            int a = 5;
+            int b = 15;
+            Console.WriteLine("after calling method swap {0}, {1}", a, b);
+            swap(ref a,ref b);
+            Console.WriteLine("after calling method swap {0}, {1}", a, b);
+```
+####If we don't use ref, after swap a and b don't change their values
+
+```C#
+public static void swap(ref int  a, ref int  b)
+        {
+            int t = a;
+            a = b;
+            b = t;
+        }
+```
+
+
 
 <i><b>Ref</b></i>
  <i><b>Out</b></i> 
