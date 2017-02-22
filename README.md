@@ -25,6 +25,7 @@ public static void swap(ref int  a, ref int  b)
             b = t;
         }
 ```
+![ref_vs_out1](https://cloud.githubusercontent.com/assets/25159667/23218418/a9866e7c-f935-11e6-995b-1efefafc59a8.gif)
 
 
 
