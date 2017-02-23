@@ -43,3 +43,46 @@ Also we can't use<a href=https://msdn.microsoft.com/en-us/library/14akc2c7.aspx>
 <li>Iterator methods, which include a yield return or yield break statement.
 </ul>
 
+####Why we would ever want to pass <a href=http://www.growingwiththeweb.com/2013/03/c-passing-reference-type-by-ref.html> a reference type into a method using the ref keyword</a>, or why the C# compiler even allows this. Using ref on a reference type is actually slightly different to not using it. The difference is that the ref keyword makes it a reference (pointer) to the variable, not just the object. This allows assigning to the source variable of the parameter from within the method.
+
+```C#
+class Program
+{
+    static void Main(string[] args)
+    {
+        List<int> listA = new List<int> { 1, 2, 3 };
+        List<int> listB = new List<int> { 1, 2, 3 };
+
+        Update(listA);
+        UpdateRef(ref listB);
+
+        Console.WriteLine("listA");
+        foreach (var val in listA)
+            Console.WriteLine(val);
+
+        Console.WriteLine("listB");
+        foreach (var val in listB)
+            Console.WriteLine(val);
+    }
+
+    static void Update(List<int> list)
+    {
+        list = new List<int>() { 4, 5, 6 };
+    }
+
+    static void UpdateRef(ref List<int> list)
+    {
+        list = new List<int>() { 4, 5, 6 };
+    }
+}
+```
+####Here is the output produced by the program:
+listA
+1
+2
+3
+listB
+4
+5
+6
+Notice how listB contains the new List but listA doesn’t. This is because we had a reference to the variable listB.
