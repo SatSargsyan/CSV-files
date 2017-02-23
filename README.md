@@ -36,5 +36,10 @@ public static void swap(ref int  a, ref int  b)
  ![ref_vs_out](https://cloud.githubusercontent.com/assets/20840005/23070031/26611812-f543-11e6-97f3-84e5466032a0.png)
  
  
- ###An<a hraf=https://msdn.microsoft.com/en-us/library/0yw3tz5k.aspx> anonymous method</a> cannot access the <i><b>Ref</b></i>or  <i><b>Out</b></i> parameters of an outer scope.
+### An<a hraf=https://msdn.microsoft.com/en-us/library/0yw3tz5k.aspx> anonymous method</a> cannot access the <i><b>Ref</b></i>or  <i><b>Out</b></i> parameters of an outer scope.
+Also we can't use<a href=https://msdn.microsoft.com/en-us/library/14akc2c7.aspx> the ref and out</a> keywords for the following kinds of methods:
+<ul>
+<li>Async methods, which you define by using the async modifier.
+<li>Iterator methods, which include a yield return or yield break statement.
+</ul>
 
