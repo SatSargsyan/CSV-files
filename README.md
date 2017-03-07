@@ -27,6 +27,25 @@ public static void swap(ref int  a, ref int  b)
 ```
 ![ref_vs_out1](https://cloud.githubusercontent.com/assets/25159667/23218418/a9866e7c-f935-11e6-995b-1efefafc59a8.gif)
 
+###Swapping Two Strings
+Swapping strings is a good example of passing reference-type parameters by reference. In the example, two strings, str1 and str2, are initialized in Main and passed to the SwapStrings method as parameters modified by the ref keyword. The two strings are swapped inside the method and inside Main as well.
+```C#
+string s1 = "Barev";
+            string s2 = "hayer";
+            Console.WriteLine("before calling method swap: {0}  {1}", s1, s2);
+            swap(ref s1, ref s2);
+            Console.WriteLine("after calling method swap: {0}  {1}", s1, s2);
+            ```
+            And swap for string:
+```C#
+            public static void swap(ref string a, ref string b)
+        {
+            string t = a;
+            a = b;
+            b = t;
+        }
+```
+
 
 
 <i><b>Ref</b></i>
