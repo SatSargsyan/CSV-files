@@ -10,17 +10,18 @@ namespace Ref_vs_Out
     {
         static void Main(string[] args)
         {
-            int i = 3; // Variable need to be initialized 
-            Console.WriteLine("before calling method ref {0}", i);
-            sampleMethod_for_ref(ref i);
-            Console.WriteLine("after calling method ref {0}",i);
+            //int i = 3; // Variable need to be initialized 
+            //Console.WriteLine("before calling method ref {0}", i);
+            //sampleMethod_for_ref(ref i);
+            //Console.WriteLine("after calling method ref {0}",i);
 
-            int k, j; // Variable needn't be initialized 
-            Console.WriteLine(sampleMethod_for_out(out k, out j)); 
-            Console.WriteLine("after calling method out {0}, {1}", k,j);
+            //int k, j; // Variable needn't be initialized 
+            //Console.WriteLine(sampleMethod_for_out(out k, out j)); 
+            //Console.WriteLine("after calling method out {0}, {1}", k,j);
+
             int a = 5;
             int b = 15;
-
+            Console.WriteLine("before calling method swap {0}, {1}", a, b);
             swap(ref a,ref b);
             Console.WriteLine("after calling method swap {0}, {1}", a, b);
 
