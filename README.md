@@ -112,7 +112,7 @@ class TestOut
         FillArray(out theArray);
 
         // Display the array elements:
-        System.Console.WriteLine("Array elements are:");
+        Console.WriteLine("Array elements are:");
         for (int i = 0; i < theArray.Length; i++)
         {
             Console.Write(theArray[i] + " ");
@@ -127,8 +127,10 @@ class TestOut
         1 2 3 4 5        
     */
 ```
+![out_for_array](https://cloud.githubusercontent.com/assets/25159667/23674928/0a78a03c-0391-11e7-961d-41514935a3bb.JPG)
 
-Like all ref parameters, a<a href= https://msdn.microsoft.com/en-us/library/szasx730.aspx> ref parameter of an array type</a> must be definitely assigned by the caller. Therefore, there is no need to be definitely assigned by the callee. A ref parameter of an array type may be altered as a result of the call. For example, the array can be assigned the null value or can be initialized to a different array. For example:
+
+Like all ref parameters, a <a href= https://msdn.microsoft.com/en-us/library/szasx730.aspx> ref parameter of an array type</a> must be definitely assigned by the caller. Therefore, there is no need to be definitely assigned by the callee. A ref parameter of an array type may be altered as a result of the call. For example, the array can be assigned the null value or can be initialized to a different array. For example:
 
 ```C#
     static void TestMethod2(ref int[] arr)
@@ -162,7 +164,7 @@ class TestRef
         FillArray(ref theArray);
 
         // Display the updated array:
-        Console.WriteLine("Array elements are:");
+        WriteLine("Array elements are:");
         for (int i = 0; i < theArray.Length; i++)
         {
             Console.Write(theArray[i] + " ");
