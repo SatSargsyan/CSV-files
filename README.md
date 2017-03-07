@@ -122,11 +122,9 @@ class TestOut
              Console.ReadKey();
     }
 }
-    /* Output:
-        Array elements are:
-        1 2 3 4 5        
-    */
+  
 ```
+Output:
 ![out_for_array](https://cloud.githubusercontent.com/assets/25159667/23674928/0a78a03c-0391-11e7-961d-41514935a3bb.JPG)
 
 
@@ -164,7 +162,7 @@ class TestRef
         FillArray(ref theArray);
 
         // Display the updated array:
-        WriteLine("Array elements are:");
+        Console.WriteLine("Array elements are:");
         for (int i = 0; i < theArray.Length; i++)
         {
             Console.Write(theArray[i] + " ");
@@ -175,8 +173,7 @@ class TestRef
         Console.ReadKey();
     }
 }
-    /* Output:
-        Array elements are:
-        1111 2 3 4 5555
-    */
+   
 ```
+Output:
+![ref_for_array](https://cloud.githubusercontent.com/assets/25159667/23675233/290dd8d6-0392-11e7-9819-6c9923801d26.JPG)
