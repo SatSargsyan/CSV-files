@@ -1,6 +1,10 @@
 # Ref vs Out
 
 <h3>They're pretty much the same - the only difference is that a variable you pass as an out parameter doesn't need to be initialized but passing it as a ref parameter it has to be set to something.</h3>
+ 
+ ![ref_vs_out](https://cloud.githubusercontent.com/assets/20840005/23070031/26611812-f543-11e6-97f3-84e5466032a0.png)
+
+###<i><b>Ref</b></i>:  variable need to be initialized 
 Part of the program demonstrating ref:
 ```C#
  int i = 3; // Variable need to be initialized 
@@ -15,12 +19,14 @@ public static void sampleMethod_for_ref(ref int sampleData)
             sampleData++;
         }
 ```
+###<i><b>Out</b></i>:  variable needn't be initialized 
 Part of the program demonstrating out:
 ```C#
  int k, j; // Variable needn't be initialized 
             Console.WriteLine(sampleMethod_for_out(out k, out j));
             Console.WriteLine("after calling method out {0}, {1}", k, j);
 ```
+Method:
 ```C#
         public static int sampleMethod_for_out(out int sampleData1, out int sampleData2)
         {
@@ -29,13 +35,9 @@ Part of the program demonstrating out:
             return sampleData1+sampleData2;
         }
 ```
-```C#
-int x;
-Foo(out x); // OK
+####The output is:
+![ref_vs_out](https://cloud.githubusercontent.com/assets/25159667/23677805/194f91e2-039b-11e7-8e6b-ae698160b7b5.JPG)
 
-int y;
-Foo(ref y); // Error: y should be initialized before calling the method
-```
 ```C#
             int a = 5;
             int b = 15;
@@ -43,7 +45,7 @@ Foo(ref y); // Error: y should be initialized before calling the method
             swap(ref a,ref b);
             Console.WriteLine("after calling method swap {0}, {1}", a, b);
 ```
-####If we don't use ref, after swap a and b don't change their values
+####If we don't use ref, after swap a and b didn't change its value
 
 ```C#
 public static void swap(ref int  a, ref int  b)
@@ -53,6 +55,7 @@ public static void swap(ref int  a, ref int  b)
             b = t;
         }
 ```
+
 ![ref_vs_out1](https://cloud.githubusercontent.com/assets/25159667/23218418/a9866e7c-f935-11e6-995b-1efefafc59a8.gif)
 
 ###Swapping Two Strings
@@ -75,13 +78,6 @@ And swap for string:
 ```
 ![ref_for_string](https://cloud.githubusercontent.com/assets/25159667/23677278/ef1d46be-0398-11e7-9cfb-3579aba0d34f.JPG)
 
-
-<i><b>Ref</b></i>
- <i><b>Out</b></i> 
- 
- 
- ![ref_vs_out](https://cloud.githubusercontent.com/assets/20840005/23070031/26611812-f543-11e6-97f3-84e5466032a0.png)
- 
  
 ### An<a hraf=https://msdn.microsoft.com/en-us/library/0yw3tz5k.aspx> anonymous method</a> cannot access the <i><b>Ref</b></i> or  <i><b>Out</b></i> parameters of an outer scope.
 Also we can't use<a href=https://msdn.microsoft.com/en-us/library/14akc2c7.aspx> the ref and out</a> keywords for the following kinds of methods:
