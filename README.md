@@ -1,6 +1,34 @@
 # Ref vs Out
 
 <h3>They're pretty much the same - the only difference is that a variable you pass as an out parameter doesn't need to be initialized but passing it as a ref parameter it has to be set to something.</h3>
+Part of the program demonstrating ref:
+```C#
+ int i = 3; // Variable need to be initialized 
+            Console.WriteLine("before calling method ref {0}", i);
+            sampleMethod_for_ref(ref i);
+            Console.WriteLine("after calling method ref {0}", i);
+```
+And method:
+```C#
+public static void sampleMethod_for_ref(ref int sampleData)
+        {
+            sampleData++;
+        }
+```
+Part of the program demonstrating out:
+```C#
+ int k, j; // Variable needn't be initialized 
+            Console.WriteLine(sampleMethod_for_out(out k, out j));
+            Console.WriteLine("after calling method out {0}, {1}", k, j);
+```
+```C#
+        public static int sampleMethod_for_out(out int sampleData1, out int sampleData2)
+        {
+            sampleData1 = 10;
+            sampleData2 = 20;
+            return sampleData1+sampleData2;
+        }
+```
 ```C#
 int x;
 Foo(out x); // OK
@@ -35,8 +63,8 @@ string s1 = "Barev";
             Console.WriteLine("before calling method swap: {0}  {1}", s1, s2);
             swap(ref s1, ref s2);
             Console.WriteLine("after calling method swap: {0}  {1}", s1, s2);
-            ```
-            And swap for string:
+```
+And swap for string:
 ```C#
             public static void swap(ref string a, ref string b)
         {
@@ -45,7 +73,7 @@ string s1 = "Barev";
             b = t;
         }
 ```
-
+![ref_for_string](https://cloud.githubusercontent.com/assets/25159667/23677278/ef1d46be-0398-11e7-9cfb-3579aba0d34f.JPG)
 
 
 <i><b>Ref</b></i>
