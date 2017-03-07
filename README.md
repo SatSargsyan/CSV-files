@@ -77,12 +77,7 @@ class Program
 }
 ```
 ####Here is the output produced by the program:
-listA
-1
-2
-3
-listB
-4
-5
-6
+
+![ref_vs_out_list_output](https://cloud.githubusercontent.com/assets/25159667/23655939/ec488e96-0350-11e7-9aac-7d45ed31d704.JPG)
+
 Notice how listB contains the new List but listA doesn’t. This is because we had a reference to the variable listB.
