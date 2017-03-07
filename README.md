@@ -84,7 +84,7 @@ ListB contains the new List but listA doesn’t. This is because we had a refere
 
 ###Passing Arrays Using ref and out
 
-Like all<a href= >out parameters, an<a href= https://msdn.microsoft.com/en-us/library/szasx730.aspx> out parameter of an array type</a> must be assigned before it is used; that is, it must be assigned by the callee. For example:
+Like all out parameters, an<a href= https://msdn.microsoft.com/en-us/library/szasx730.aspx> out parameter of an array type</a> must be assigned before it is used; that is, it must be assigned by the callee. For example:
 
 ```C#
     static void TestMethod1(out int[] arr)
@@ -93,7 +93,7 @@ Like all<a href= >out parameters, an<a href= https://msdn.microsoft.com/en-us/li
     }
     
 ```   
- ####   In this example, the array theArray is declared in the caller (the Main method), and initialized in the FillArray method. Then, the array elements are returned to the caller and displayed.
+  In this example, the array theArray is declared in the caller (the Main method), and initialized in the FillArray method. Then, the array elements are returned to the caller and displayed.
  
 ```C#
 class TestOut
@@ -128,11 +128,53 @@ class TestOut
     */
 ```
 
+Like all ref parameters, a<a href= https://msdn.microsoft.com/en-us/library/szasx730.aspx> ref parameter of an array type</a> must be definitely assigned by the caller. Therefore, there is no need to be definitely assigned by the callee. A ref parameter of an array type may be altered as a result of the call. For example, the array can be assigned the null value or can be initialized to a different array. For example:
 
-####Like all ref parameters, a ref parameter of an array type must be definitely assigned by the caller. Therefore, there is no need to be definitely assigned by the callee. A ref parameter of an array type may be altered as a result of the call. For example, the array can be assigned the null value or can be initialized to a different array. For example:
 ```C#
     static void TestMethod2(ref int[] arr)
     {
         arr = new int[10];   // arr initialized to a different array
     }
+```
+
+In this example, the array theArray is initialized in the caller (the Main method), and passed to the FillArray method by using the ref parameter. Some of the array elements are updated in the FillArray method. Then, the array elements are returned to the caller and displayed.
+```C#
+class TestRef
+{
+    static void FillArray(ref int[] arr)
+    {
+        // Create the array on demand:
+        if (arr == null)
+        {
+            arr = new int[10];
+        }
+        // Fill the array:
+        arr[0] = 1111;
+        arr[4] = 5555;
+    }
+
+    static void Main()
+    {
+        // Initialize the array:
+        int[] theArray = { 1, 2, 3, 4, 5 };
+
+        // Pass the array using ref:
+        FillArray(ref theArray);
+
+        // Display the updated array:
+        Console.WriteLine("Array elements are:");
+        for (int i = 0; i < theArray.Length; i++)
+        {
+            Console.Write(theArray[i] + " ");
+        }
+
+        // Keep the console window open in debug mode.
+        Console.WriteLine("Press any key to exit.");
+        Console.ReadKey();
+    }
+}
+    /* Output:
+        Array elements are:
+        1111 2 3 4 5555
+    */
 ```
