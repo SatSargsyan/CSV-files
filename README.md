@@ -80,4 +80,59 @@ class Program
 
 ![ref_vs_out_list_output](https://cloud.githubusercontent.com/assets/25159667/23655939/ec488e96-0350-11e7-9aac-7d45ed31d704.JPG)
 
-Notice how listB contains the new List but listA doesn’t. This is because we had a reference to the variable listB.
+ListB contains the new List but listA doesn’t. This is because we had a reference to the variable listB.
+
+###Passing Arrays Using ref and out
+
+Like all<a href= >out parameters, an<a href= https://msdn.microsoft.com/en-us/library/szasx730.aspx> out parameter of an array type</a> must be assigned before it is used; that is, it must be assigned by the callee. For example:
+
+```C#
+    static void TestMethod1(out int[] arr)
+    {
+        arr = new int[10];   // definite assignment of arr
+    }
+    
+```   
+ ####   In this example, the array theArray is declared in the caller (the Main method), and initialized in the FillArray method. Then, the array elements are returned to the caller and displayed.
+ 
+```C#
+class TestOut
+{
+    static void FillArray(out int[] arr)
+    {
+        // Initialize the array:
+        arr = new int[5] { 1, 2, 3, 4, 5 };
+    }
+
+    static void Main()
+    {
+        int[] theArray; // Initialization is not required
+
+        // Pass the array to the callee using out:
+        FillArray(out theArray);
+
+        // Display the array elements:
+        System.Console.WriteLine("Array elements are:");
+        for (int i = 0; i < theArray.Length; i++)
+        {
+            Console.Write(theArray[i] + " ");
+        }
+
+        // Keep the console window open in debug mode.
+             Console.ReadKey();
+    }
+}
+    /* Output:
+        Array elements are:
+        1 2 3 4 5        
+    */
+```
+
+
+####Like all ref parameters, a ref parameter of an array type must be definitely assigned by the caller. Therefore, there is no need to be definitely assigned by the callee. A ref parameter of an array type may be altered as a result of the call. For example, the array can be assigned the null value or can be initialized to a different array. For example:
+```C#
+    static void TestMethod2(ref int[] arr)
+    {
+        arr = new int[10];   // arr initialized to a different array
+    }
+```
