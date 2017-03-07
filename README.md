@@ -38,6 +38,7 @@ Method:
 ####The output is:
 ![ref_vs_out](https://cloud.githubusercontent.com/assets/25159667/23677805/194f91e2-039b-11e7-8e6b-ae698160b7b5.JPG)
 
+####This part of the program demonstrated swap without using ref and with ref:
 ```C#
             int a = 5;
             int b = 15;
@@ -47,6 +48,15 @@ Method:
 ```
 ####If we don't use ref, after swap a and b didn't change its value
 
+```C#
+public static void swap(int  a, int  b)
+        {
+            int t = a;
+            a = b;
+            b = t;
+        }
+```
+####For t changing a and b values we are using ref:
 ```C#
 public static void swap(ref int  a, ref int  b)
         {
