@@ -124,7 +124,7 @@ class TestOut
 }
   
 ```
-Output:
+####Here is the output produced by the program:
 ![out_for_array](https://cloud.githubusercontent.com/assets/25159667/23674928/0a78a03c-0391-11e7-961d-41514935a3bb.JPG)
 
 
@@ -175,5 +175,5 @@ class TestRef
 }
    
 ```
-Output:
+####Here is the output produced by the program:
 ![ref_for_array](https://cloud.githubusercontent.com/assets/25159667/23675233/290dd8d6-0392-11e7-9819-6c9923801d26.JPG)
