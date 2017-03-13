@@ -88,6 +88,8 @@ And swap for string:
 ```
 ![ref_for_string](https://cloud.githubusercontent.com/assets/25159667/23677278/ef1d46be-0398-11e7-9cfb-3579aba0d34f.JPG)
 
+If we don't use "ref" for "string", result will be same as in time "int". it is changing nothing  after calling method swap. So it's neccesary to use "ref".
+
  
 ### An<a hraf=https://msdn.microsoft.com/en-us/library/0yw3tz5k.aspx> anonymous method</a> cannot access the <i><b>Ref</b></i> or  <i><b>Out</b></i> parameters of an outer scope.
 Also we can't use<a href=https://msdn.microsoft.com/en-us/library/14akc2c7.aspx> the ref and out</a> keywords for the following kinds of methods:
