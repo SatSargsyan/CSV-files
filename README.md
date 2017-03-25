@@ -4,7 +4,7 @@
  
  ![ref_vs_out](https://cloud.githubusercontent.com/assets/20840005/23070031/26611812-f543-11e6-97f3-84e5466032a0.png)
 
-###<i><b>Ref</b></i>:  variable need to be initialized 
+### <i><b>Ref</b></i>:  variable need to be initialized 
 Part of the program demonstrating ref:
 ```C#
  int i = 3; // Variable need to be initialized 
@@ -19,7 +19,7 @@ public static void sampleMethod_for_ref(ref int sampleData)
             sampleData++;
         }
 ```
-###<i><b>Out</b></i>:  variable needn't be initialized 
+### <i><b>Out</b></i>:  variable needn't be initialized 
 Part of the program demonstrating out:
 ```C#
  int k, j; // Variable needn't be initialized 
@@ -35,10 +35,10 @@ Method:
             return sampleData1+sampleData2;
         }
 ```
-####The output is:
+#### The output is:
 ![ref_vs_out](https://cloud.githubusercontent.com/assets/25159667/23677805/194f91e2-039b-11e7-8e6b-ae698160b7b5.JPG)
 
-####This part of the program demonstrated swap without using ref and with ref:
+#### This part of the program demonstrated swap without using ref and with ref:
 ```C#
             int a = 5;
             int b = 15;
@@ -46,7 +46,7 @@ Method:
             swap(ref a,ref b);
             Console.WriteLine("after calling method swap {0}, {1}", a, b);
 ```
-####If we don't use ref, after swap a and b didn't change its value
+#### If we don't use ref, after swap a and b didn't change its value
 
 ```C#
 public static void swap(int  a, int  b)
@@ -56,7 +56,7 @@ public static void swap(int  a, int  b)
             b = t;
         }
 ```
-####For t changing a and b values we are using ref:
+#### For t changing a and b values we are using ref:
 ```C#
 public static void swap(ref int  a, ref int  b)
         {
@@ -131,7 +131,7 @@ class Program
     }
 }
 ```
-####Here is the output produced by the program:
+#### Here is the output produced by the program:
 
 ![ref_vs_out_list_output](https://cloud.githubusercontent.com/assets/25159667/23655939/ec488e96-0350-11e7-9aac-7d45ed31d704.JPG)
 
@@ -179,7 +179,7 @@ class TestOut
 }
   
 ```
-####Here is the output produced by the program:
+#### Here is the output produced by the program:
 ![out_for_array](https://cloud.githubusercontent.com/assets/25159667/23674928/0a78a03c-0391-11e7-961d-41514935a3bb.JPG)
 
 
@@ -230,5 +230,5 @@ class TestRef
 }
    
 ```
-####Here is the output produced by the program:
+#### Here is the output produced by the program:
 ![ref_for_array](https://cloud.githubusercontent.com/assets/25159667/23675233/290dd8d6-0392-11e7-9819-6c9923801d26.JPG)
