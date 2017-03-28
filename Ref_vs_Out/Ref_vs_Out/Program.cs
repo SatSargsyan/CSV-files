@@ -33,8 +33,12 @@ namespace Ref_vs_Out
 
             string s1 = "Barev";
             string s2 = "hayer";
+            //Console.WriteLine("before calling method swap: {0}  {1}", s1, s2);
+            //swap(ref s1, ref s2);
+            //Console.WriteLine("after calling method swap: {0}  {1}", s1, s2);
+
             Console.WriteLine("before calling method swap: {0}  {1}", s1, s2);
-            swap(ref s1, ref s2);
+            swap(s1, s2);
             Console.WriteLine("after calling method swap: {0}  {1}", s1, s2);
 
             Console.ReadKey();
@@ -56,7 +60,14 @@ namespace Ref_vs_Out
             a = b;
             b = t;
         }
-        public static void swap(ref string a, ref string b)
+       
+        //public static void swap(ref string a, ref string b)
+        //{
+        //    string t = a;
+        //    a = b;
+        //    b = t;
+        //}
+        public static void swap(string a, string b)
         {
             string t = a;
             a = b;
