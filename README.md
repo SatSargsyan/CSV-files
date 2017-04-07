@@ -68,7 +68,7 @@ public static void swap(ref int  a, ref int  b)
 
 ![ref_vs_out1](https://cloud.githubusercontent.com/assets/25159667/23218418/a9866e7c-f935-11e6-995b-1efefafc59a8.gif)
 
-###Swapping Two Strings
+### Swapping Two Strings
 Swapping strings is a good example of passing reference-type parameters by reference. In the example, two strings, str1 and str2, are initialized in Main and passed to the SwapStrings method as parameters modified by the ref keyword. The two strings are swapped inside the method and inside Main as well.
 ```C#
 string s1 = "Barev";
@@ -98,7 +98,7 @@ Also we can't use<a href=https://msdn.microsoft.com/en-us/library/14akc2c7.aspx>
 <li>Iterator methods, which include a yield return or yield break statement.
 </ul>
 
-####Why we would ever want to pass <a href=http://www.growingwiththeweb.com/2013/03/c-passing-reference-type-by-ref.html> a reference type into a method using the ref keyword</a>, or why the C# compiler even allows this. Using ref on a reference type is actually slightly different to not using it. The difference is that the ref keyword makes it a reference (pointer) to the variable, not just the object. This allows assigning to the source variable of the parameter from within the method.
+#### Why we would ever want to pass <a href=http://www.growingwiththeweb.com/2013/03/c-passing-reference-type-by-ref.html> a reference type into a method using the ref keyword</a>, or why the C# compiler even allows this. Using ref on a reference type is actually slightly different to not using it. The difference is that the ref keyword makes it a reference (pointer) to the variable, not just the object. This allows assigning to the source variable of the parameter from within the method.
 
 ```C#
 class Program
@@ -137,7 +137,7 @@ class Program
 
 ListB contains the new List but listA doesn’t. This is because we had a reference to the variable listB.
 
-###Passing Arrays Using ref and out
+### Passing Arrays Using ref and out
 
 Like all out parameters, an<a href= https://msdn.microsoft.com/en-us/library/szasx730.aspx> out parameter of an array type</a> must be assigned before it is used; that is, it must be assigned by the callee. For example:
 
